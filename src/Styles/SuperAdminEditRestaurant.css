@@ -1,0 +1,181 @@
+/* Page Root Settings */
+.super-edit-page {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f1f5f9; /* Slate gray background to signal system level */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  color: #0f172a;
+}
+
+/* Central Admin Form Card */
+.super-edit-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Sections Layout formatting rules */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 18px;
+}
+
+.form-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.back-link {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  color: #0f172a;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   INPUT PARAMETERS SYSTEM CONTROLS
+   ========================================================================== */
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #475569;
+}
+
+.field-group input[type="text"] {
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.field-group input[type="text"]:focus {
+  border-color: #4f46e5; /* Royal indigo color code for Super Admin suite features */
+}
+
+/* Custom visibility layout rules handling operational button status toggles */
+.toggle-field-group {
+  background-color: #f8fafc;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.status-toggle-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.toggle-state-btn {
+  border: none;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  width: max-content;
+  letter-spacing: 0.5px;
+  transition: transform 0.1s ease, background-color 0.15s ease;
+}
+
+.toggle-state-btn:active {
+  transform: scale(0.98);
+}
+
+.toggle-state-btn.state-active {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.toggle-state-btn.state-active:hover {
+  background-color: #059669;
+}
+
+.toggle-state-btn.state-disabled {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.toggle-state-btn.state-disabled:hover {
+  background-color: #dc2626;
+}
+
+.toggle-helper-text {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   COMMIT ACTION TRIGGERS INTERFACES
+   ========================================================================== */
+.super-save-btn {
+  background-color: #4f46e5; /* Indigo Super Admin theme */
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  letter-spacing: 0.3px;
+  transition: background-color 0.15s ease;
+}
+
+.super-save-btn:hover:not(:disabled) {
+  background-color: #4338ca;
+}
+
+.super-save-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Fallback loader state UI profiles */
+.form-loading, .admin-redirecting {
+  text-align: center;
+  padding: 60px 10px;
+  color: #64748b;
+  font-weight: 500;
+}

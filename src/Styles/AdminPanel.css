@@ -1,0 +1,186 @@
+/* Base Dashboard Layout Styling */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #333;
+}
+
+/* ==========================================================================
+   SIDEBAR COMPONENT
+   ========================================================================== */
+.admin-sidebar {
+  width: 260px;
+  background-color: #1e293b; /* Dark slate look */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  padding: 25px 20px;
+  border-bottom: 1px solid #334155;
+}
+
+.sidebar-logo {
+  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.restaurant-id-tag {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #334155;
+  color: #fff;
+}
+
+/* ==========================================================================
+   MAIN DASHBOARD WORKSPACE
+   ========================================================================== */
+.admin-main-content {
+  flex-grow: 1;
+  padding: 40px;
+  max-width: 1200px;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 30px 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   STATS CARD COMPONENT GRID
+   ========================================================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #e67e22; /* Accenting your primary brand color */
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   RECENT ITEMS PREVIEW SECTION
+   ========================================================================== */
+.recent-items-panel {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  padding: 25px;
+}
+
+.panel-header h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Flex Container formatting row elements cleanly */
+.recent-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.recent-item-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  border: 1px solid #f1f5f9;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.recent-item-card:hover {
+  background-color: #f8fafc;
+}
+
+/* Generous images for admin inspection controls */
+.recent-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #e2e8f0;
+}
+
+.recent-item-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.recent-item-price {
+  margin: 0;
+  color: #e67e22;
+  font-weight: 600;
+}
+
+/* Redirection Fallback screen state styling */
+.admin-redirecting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+/* Responsive breakpoint for compact screens */
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+  }
+  .admin-main-content {
+    padding: 20px;
+  }
+}

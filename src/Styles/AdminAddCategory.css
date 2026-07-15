@@ -1,0 +1,120 @@
+/* Container Workspace Setup */
+.add-category-page {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  color: #1e293b;
+}
+
+/* Centralized Panel Card Layout */
+.add-category-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Header Adjustments Layout styling */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 15px;
+}
+
+.form-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.back-link {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  color: #1e293b;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   INPUTS & FIELDS LAYOUT FORMS
+   ========================================================================== */
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.field-group input[type="text"] {
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.field-group input[type="text"]:focus {
+  border-color: #e67e22; /* Matches your accent theme */
+}
+
+/* ==========================================================================
+   SUBMIT INTERFACES BUTTON
+   ========================================================================== */
+.save-btn {
+  background-color: #e67e22;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.15s ease;
+}
+
+.save-btn:hover:not(:disabled) {
+  background-color: #d35400;
+}
+
+.save-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Fallback state parameters formatting rules */
+.admin-redirecting {
+  text-align: center;
+  padding: 50px 20px;
+  color: #64748b;
+  font-weight: 500;
+}

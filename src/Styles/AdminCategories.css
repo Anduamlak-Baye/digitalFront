@@ -1,0 +1,203 @@
+/* Container Layout Foundation */
+.admin-categories-page {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   HEADER ACTIONS SECTION
+   ========================================================================== */
+.admin-top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.section-title-group h1 {
+  margin: 0 0 6px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.section-title-group p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.primary-action-btn {
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.primary-action-btn:hover {
+  background-color: #d35400;
+}
+
+/* ==========================================================================
+   WORKSPACE LIST DATA ROWS
+   ========================================================================== */
+.admin-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.admin-categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.admin-category-row {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+/* Dim styling when category state is flagged hidden */
+.admin-category-row.item-state-hidden {
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.admin-category-row.item-state-hidden .admin-item-name {
+  color: #94a3b8;
+}
+
+.admin-item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-item-name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Visibility Badges styling */
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  width: max-content;
+}
+
+.badge-visible {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge-hidden {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Toggle Buttons UI */
+.toggle-action-btn {
+  background-color: #fff;
+  border: 1px solid #b91c1c;
+  color: #b91c1c;
+  padding: 8px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  min-width: 90px;
+  transition: all 0.15s ease;
+}
+
+.toggle-action-btn:hover {
+  background-color: #b91c1c;
+  color: #fff;
+}
+
+/* Modifying Button styling properties when target can be unhidden */
+.toggle-action-btn.unhide-variant {
+  border-color: #15803d;
+  color: #15803d;
+}
+
+.toggle-action-btn.unhide-variant:hover {
+  background-color: #15803d;
+  color: #fff;
+}
+
+/* ==========================================================================
+   GLOBAL BOTTOM CONTROLS FOOTER
+   ========================================================================== */
+.admin-list-footer {
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 24px;
+}
+
+.confirm-page-btn {
+  background-color: #1e293b;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.confirm-page-btn:hover:not(:disabled) {
+  background-color: #334155;
+}
+
+.confirm-page-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Fallback informative layout screens */
+.admin-list-loading,
+.admin-list-empty,
+.admin-redirecting {
+  text-align: center;
+  padding: 50px 20px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Adaptive Breakpoint adjustment */
+@media (min-width: 600px) {
+  .admin-top-section {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .primary-action-btn {
+    order: 2;
+  }
+  .section-title-group {
+    order: 1;
+  }
+}

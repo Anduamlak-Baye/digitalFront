@@ -1,0 +1,166 @@
+.admin-edit-page {
+  min-height: 100vh;
+  padding: 40px;
+
+  background: #f4f6fb;
+  font-family: system-ui, sans-serif;
+}
+
+.admin-edit-page h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+/* MAIN LAYOUT */
+.edit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* IMAGE SIDE */
+.image-section {
+  background: white;
+  padding: 20px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-image {
+  width: 100%;
+  height: 280px;
+
+  object-fit: cover;
+
+  border-radius: 16px;
+}
+
+.hint {
+  margin-top: 10px;
+  color: #888;
+  font-size: 14px;
+}
+
+/* FORM SIDE */
+.form-section {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* INPUT GROUPS */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-group label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.field-group input {
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  border: 1px solid #ddd;
+
+  outline: none;
+
+  font-size: 15px;
+
+  transition: 0.2s;
+}
+
+.field-group input:focus {
+  border-color: #111;
+}
+
+/* TOGGLES */
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.toggle-row label {
+  flex: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #f6f6f6;
+
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+}
+
+/* SAVE BUTTON */
+.save-btn {
+  margin-top: 10px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #111;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.save-btn:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* LOADING */
+.loading {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 22px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .edit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-edit-page h1 {
+    font-size: 28px;
+  }
+}
