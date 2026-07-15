@@ -7,7 +7,7 @@ function QrGenerator() {
   const restaurantId = localStorage.getItem('restaurantId')
   // 1. Build the production or local URL pointing to your Items page
   // In production, change this to your actual deployed domain (e.g., https://mymenu.com/menu/)
-  const menuUrl = `http://localhost:5173/menu/${restaurantId}`; 
+  const menuUrl = `https://front2323.netlify.app/menu/${restaurantId}`; 
 
   // 2. Function to download the QR code as a PNG file
   const downloadQRCode = () => {
