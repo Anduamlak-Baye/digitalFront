@@ -21,7 +21,7 @@ function App(){
   return(
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<h1>Fuck you nigga</h1>}/>
+      <Route path='/' element={<h1>Fuck nigga</h1>}/>
       {/* <Route path='/:restaurantId' element={<Items/>}/> */}
       <Route path='/:restaurantId' element={<h1>Second Page</h1>}/>
       
