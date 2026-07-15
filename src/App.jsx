@@ -21,6 +21,7 @@ function App(){
   return(
     <BrowserRouter>
     <Routes>
+      <Route path='/' element={<h1>Fuck you nigga</h1>}/>
       <Route path='/:restaurantId' element={<Items/>}/>
       <Route path='/item-detail/:resId/:id' element={<ItemsDetail/>}/>
       <Route path='/admin-panel' element = {<AdminPanel/>}/>
