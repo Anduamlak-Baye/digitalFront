@@ -22,7 +22,9 @@ function App(){
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<h1>Fuck you nigga</h1>}/>
-      <Route path='/:restaurantId' element={<Items/>}/>
+      {/* <Route path='/:restaurantId' element={<Items/>}/> */}
+      <Route path='/:restaurantId' element={<h1>Second Page</h1>}/>
+      
       <Route path='/item-detail/:resId/:id' element={<ItemsDetail/>}/>
       <Route path='/admin-panel' element = {<AdminPanel/>}/>
       <Route path='/login' element={<Login/>}/>
