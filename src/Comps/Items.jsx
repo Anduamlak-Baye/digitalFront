@@ -19,7 +19,7 @@ function Items() {
 
   // Read local storage inside state initialization so it only hits disk once
   const [filter] = useState(() => {
-    return JSON.parse(localStorage.getItem("menuConfig")) || {};
+    return JSON.parse(sessionStorage.getItem("menuConfig")) || {};
   });
 
   // Fetch all data reactively based on restaurantId
@@ -30,6 +30,7 @@ function Items() {
 
     const fetchMenuData = async () => {
       try {
+
         const localData = JSON.parse(sessionStorage.getItem(restaurantId))
         console.log(localData)
         if(localData){

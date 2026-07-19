@@ -13,7 +13,7 @@ function Settings() {
   });
 
   useEffect(() => {
-    const saved = localStorage.getItem("menuConfig");
+    const saved = sessionStorage.getItem("menuConfig");
     if (saved) {
       setConfig(JSON.parse(saved));
     }
@@ -22,7 +22,7 @@ function Settings() {
   const updateField = (field, value) => {
     const updated = { ...config, [field]: value };
     setConfig(updated);
-    localStorage.setItem("menuConfig", JSON.stringify(updated));
+    sessionStorage.setItem("menuConfig", JSON.stringify(updated));
   };
 
   return (
