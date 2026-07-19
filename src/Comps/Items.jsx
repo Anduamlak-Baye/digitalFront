@@ -30,22 +30,34 @@ function Items() {
 
     const fetchMenuData = async () => {
       try {
+        const localData = JSON.parse(sessionStorage.getItem(restaurantId))
+        console.log(localData)
+        if(localData){
+            setItems(localData.items);
+            setCategories(localData.categories);
+            setRestaurantDetails({
+              restaurantName: localData.restaurant.restaurantName,
+              restaurantLogo: localData.restaurant.restaurantLogo,
+            })
+          return;
 
+        }
         axios.get(URL + `/restaurantDetails?resId=${restaurantId}`)
         .then(res => {
-          console.log(res.data)
+        sessionStorage.setItem(restaurantId, JSON.stringify(res.data))
+        console.log(res.data)
         setItems(res.data.items);
         setCategories(res.data.categories);
         setRestaurantDetails({
           restaurantName: res.data.restaurant.restaurantName,
           restaurantLogo: res.data.restaurant.restaurantLogo,
         });
+     
         })
         .catch(err => {
           console.error(err)
         })
 
-        
         
       } catch (error) {
         console.error("Error loading menu data:", error);
