@@ -12,6 +12,11 @@ function ItemsDetail() {
 
 
   useEffect(() => {
+    const localData = JSON.parse(sessionStorage.getItem(resId))
+    if(localData){
+      const item = localData.items.find(i => i.item_id == id)
+      setItem(item)
+    }
     axios
       .get(URL + `/menuItems?resId=${resId}&id=${id}`)
       .then((res) => {
