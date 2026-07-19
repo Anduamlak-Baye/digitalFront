@@ -30,20 +30,23 @@ function Items() {
 
     const fetchMenuData = async () => {
       try {
-        const [itemsRes, categoriesRes, restaurantRes] = await Promise.all([
-          axios.get(`${URL}/menuItems?resId=${restaurantId}`),
-          axios.get(`${URL}/categories?resId=${restaurantId}`),
-          axios.get(`${URL}/restaurantLists?resId=${restaurantId}`)
-        ]);
 
-        console.log(itemsRes.data)
-        console.log(categoriesRes.data)
-        setItems(itemsRes.data);
-        setCategories(categoriesRes.data);
+        axios.get(URL + `/restaurantDetails?resId=${restaurantId}`)
+        .then(res => {
+          console.log(res.data)
+        setItems(res.data.items);
+        setCategories(res.data.categories);
         setRestaurantDetails({
-          restaurantName: restaurantRes.data.restaurant.restaurantName,
-          restaurantLogo: restaurantRes.data.restaurant.restaurantLogo,
+          restaurantName: res.data.restaurant.restaurantName,
+          restaurantLogo: res.data.restaurant.restaurantLogo,
         });
+        })
+        .catch(err => {
+          console.error(err)
+        })
+
+        
+        
       } catch (error) {
         console.error("Error loading menu data:", error);
       } finally {
