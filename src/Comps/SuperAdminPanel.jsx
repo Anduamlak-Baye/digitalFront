@@ -16,6 +16,8 @@ export default function SuperAdminPanel() {
   // State to track which "page" the admin is currently viewing
   const [currentPage, setCurrentPage] = useState('hub'); // 'hub', 'register', 'edit', 'analytics', 'settings'
   const navigate = useNavigate()
+  document.title = "Super Nav"
+
 
   // Sub-component rendering based on current state
   const renderPage = () => {
@@ -101,6 +103,8 @@ function NavigationHub({ onNavigate }) {
    2. REGISTER RESTAURANT PAGE
    ========================================== */
 function RegisterRestaurantPage({ onBack }) {
+    document.title = "Super Register"
+
   const [logoPreview, setLogoPreview] = useState('');
   const [restaurantName, setRestaurantName] = useState(''); 
   const [logoFile,setLogoFile] = useState('');
@@ -109,7 +113,7 @@ function RegisterRestaurantPage({ onBack }) {
   
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    console.log(file)
+    
     if (file)
        setLogoPreview(file);
         setLogoFile(file)
@@ -137,7 +141,7 @@ function RegisterRestaurantPage({ onBack }) {
           }
         }
       )
-      console.log(response)
+      
       alert("Registered a new Restaurant")
       
     }
@@ -152,7 +156,7 @@ function RegisterRestaurantPage({ onBack }) {
 
   return (
     <div className="page-container">
-      <title>KK</title>
+  
       <button onClick={onBack} className="btn-back"><ArrowLeft size={16} /> Back to Dashboard</button>
       <div className="page-header">
         <h2 className="form-page-title">Register New Restaurant</h2>
@@ -212,10 +216,11 @@ function EditRestaurantPage({ onBack }) {
   const [restaurants,setRestaurants] = useState([])
 
   useEffect(() => {
+  document.title = "Super Edit"
+
 
     axios.get(URL + "/restaurantLists")
     .then(res => {
-      console.log(typeof(res.data))
       setRestaurants(res.data)
     })
     .catch(err => {

@@ -14,6 +14,8 @@ function AdminMenuItems() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "Admin | Menu Items"
+
     // Single consolidated auth guard check
     if (!token || !savedId) {
       navigate("/login");

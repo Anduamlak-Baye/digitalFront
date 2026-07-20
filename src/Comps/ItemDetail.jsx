@@ -12,6 +12,8 @@ function ItemsDetail() {
 
 
   useEffect(() => {
+    document.title = "Item Detail"
+
     const localData = JSON.parse(sessionStorage.getItem(resId))
     if(localData){
       const item = localData.items.find(i => i.item_id == id)

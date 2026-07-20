@@ -16,6 +16,8 @@ function AdminEditItems() {
   const [ changedCategory, setChangedCategory] = useState(null)
 
   useEffect(() => {
+    document.title = "Admin | Edit Items"
+
     axios.get(`${URL}/menuItems?id=${id}&resId=${savedId}`)
       .then(res => {
         const data = res.data;
@@ -42,7 +44,6 @@ function AdminEditItems() {
   };
 
   const handleSave = () => {
-    console.log(form)
     axios.patch(`${URL}/menuItems/${id}?restaurantId=${savedId}`, form,{
       headers : {
         Authorization: `Bearer ${token}`

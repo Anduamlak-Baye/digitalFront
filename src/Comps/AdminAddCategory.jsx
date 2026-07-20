@@ -15,6 +15,7 @@ function AdminAddCategory() {
 
   // Router Auth Guard Check
   useEffect(() => {
+    document.title = "Admin | Add Category "
     if (!token || !savedId) {
       navigate("/login");
     }
@@ -32,7 +33,12 @@ function AdminAddCategory() {
       .post(`${URL}/addCategory`, {
         categoryName: categoryName.trim(),
         restaurantId: savedId,
-      })
+      },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
       .then(() => {
         alert("Category Added successfully!");
         setCategoryName(""); // Clears form field state parameters

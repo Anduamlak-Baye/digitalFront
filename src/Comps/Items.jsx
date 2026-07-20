@@ -23,30 +23,30 @@ function Items() {
   });
 
   // Fetch all data reactively based on restaurantId
-  useEffect(() => {
+  useEffect(() => {    
+    document.title = restaurantDetails?.restaurantName || 'Menu Page';
     if (!restaurantId) return;
-
     setIsLoading(true);
 
     const fetchMenuData = async () => {
       try {
 
         const localData = JSON.parse(sessionStorage.getItem(restaurantId))
-        console.log(localData)
         if(localData){
+
             setItems(localData.items);
             setCategories(localData.categories);
             setRestaurantDetails({
               restaurantName: localData.restaurant.restaurantName,
               restaurantLogo: localData.restaurant.restaurantLogo,
             })
+            
           return;
 
         }
         axios.get(URL + `/restaurantDetails?resId=${restaurantId}`)
         .then(res => {
         sessionStorage.setItem(restaurantId, JSON.stringify(res.data))
-        console.log(res.data)
         setItems(res.data.items);
         setCategories(res.data.categories);
         setRestaurantDetails({
@@ -56,6 +56,7 @@ function Items() {
      
         })
         .catch(err => {
+          
           console.error(err)
         })
 
@@ -146,7 +147,7 @@ function Items() {
             className={`category-btn ${
               currentCategory === category.categoryId ? "active" : ""
             }`}
-            onClick={() => (setCurrentCategory(category.categoryId, console.log(category.categoryId)))}
+            onClick={() => (setCurrentCategory(category.categoryId))}
           >
             {category.name}
           </button>

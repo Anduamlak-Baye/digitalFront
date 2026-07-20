@@ -4,6 +4,8 @@ import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function SuperLogin() {
+    document.title = "Super Login"
+
     const navigate = useNavigate()
 
     const URL  = import.meta.env.VITE_API_URL
@@ -29,7 +31,6 @@ function SuperLogin() {
         .then(res => {
             const { superToken  } = res.data
             localStorage.setItem('superToken', superToken)
-            console.log(superToken)
             navigate('/super-admin-panel')
 
         })

@@ -23,7 +23,7 @@ function SuperAdminEditRestaurant() {
   const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
-    // Structural Guard block
+  document.title = "Super Edit"
     if (!superToken) {
       navigate("/super-admin-login-page");
       return;
@@ -58,7 +58,6 @@ function SuperAdminEditRestaurant() {
     }
 
     setIsSaving(true);
-    console.log("Edit", superToken)
     axios
       .patch(
         `${URL}/editRestaurant`,

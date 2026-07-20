@@ -19,23 +19,13 @@ function AdminPanel() {
   }
 
   useEffect(() => {
+      document.title = "Admin | Admin Navigation"
+
     // Auth Guard: Redirect early if credentials are missing
     if (!token || !savedId) {
       navigate("/login");
       return;
     }
-
-    axios
-      .get(`${URL}/counter?resId=${savedId}`) // Passing restaurant context to stats counter
-      .then((res) => {
-        setStats(res.data);
-      })
-      .catch((err) => {
-        console.error("Error fetching admin stats:", err);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
   }, [token, savedId, navigate, URL]);
 
   // Prevent rendering markup completely if unauthenticated

@@ -4,6 +4,7 @@ import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login() {
+    document.title = "Admin Login"
     const navigate = useNavigate()
 
     const URL  = import.meta.env.VITE_API_URL
@@ -32,6 +33,7 @@ function Login() {
             localStorage.setItem('adminToken',token)
             localStorage.setItem('restaurantId',restaurantId)
             console.log(res.data)
+            
             navigate('/admin-panel')
 
         })

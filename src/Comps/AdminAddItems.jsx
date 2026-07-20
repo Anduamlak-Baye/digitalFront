@@ -25,6 +25,7 @@ function AdminAddItems() {
   const [fileInputKey, setFileInputKey] = useState(Date.now()); // Forces file input element reset
 
   useEffect(() => {
+        document.title = "Admin| Add Items"
     if (!token || !savedId) {
       navigate("/login");
       return;
@@ -65,7 +66,11 @@ function AdminAddItems() {
     formData.append("vegan", vegan);
 
     axios
-      .post(`${URL}/addItem`, formData)
+      .post(`${URL}/addItem`, formData,{
+        headers : {
+          Authorization: `Bearer ${token}`
+        }
+      })
       .then(() => {
         alert("Item Added successfully!");
 

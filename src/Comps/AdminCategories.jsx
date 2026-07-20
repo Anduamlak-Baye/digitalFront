@@ -16,6 +16,8 @@ function AdminCategories() {
   const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
+    document.title = "Admin | Categories"
+  
     if (!token || !savedId) {
       navigate("/login");
       return;
@@ -61,7 +63,11 @@ function AdminCategories() {
 
 
     axios
-      .patch(`${URL}/categories`, changedCategories)
+      .patch(`${URL}/categories`, changedCategories,{
+        headers :{
+          Authorization :`Bearer ${token}`
+        }
+      })
       .then(() => {
         setOriginalCategories(categories); // Sync state tracking references
         alert("Updated Successfully ")
